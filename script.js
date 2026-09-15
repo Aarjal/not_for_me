@@ -1,21 +1,9 @@
-/* ============================================
-   SUJAL DEV — Portfolio Script
-   Progressive enhancement only.
-   All content is static HTML — this adds:
-   - Theme toggle (dark/light)
-   - Scroll-reveal animations
-   - Mobile menu toggle
-   - Sticky nav shadow
-   ============================================ */
-
 (function () {
   'use strict';
 
-  /* ---------- Theme Toggle ---------- */
   const html = document.documentElement;
   const toggle = document.getElementById('theme-toggle');
 
-  // Apply saved preference on load
   const saved = localStorage.getItem('theme');
   if (saved) {
     html.setAttribute('data-theme', saved);
@@ -30,7 +18,6 @@
       } else if (current === 'light') {
         next = 'dark';
       } else {
-        // No explicit theme set — check system preference
         next = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
       }
       html.setAttribute('data-theme', next);
@@ -38,7 +25,6 @@
     });
   }
 
-  /* ---------- Scroll Reveal ---------- */
   var revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length && 'IntersectionObserver' in window) {
     var observer = new IntersectionObserver(function (entries) {
@@ -60,7 +46,7 @@
     });
   }
 
-  /* ---------- Mobile Menu Toggle ---------- */
+
   var menuBtn = document.getElementById('menu-btn');
   var nav = document.querySelector('.topnav');
 
@@ -80,7 +66,7 @@
     });
   }
 
-  /* ---------- Sticky Nav Shadow ---------- */
+
   if (nav) {
     window.addEventListener('scroll', function () {
       if (window.scrollY > 10) {

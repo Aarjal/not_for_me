@@ -1,8 +1,4 @@
-/* ============================================
-   SUJAL DEV — Portfolio Stylesheet
-   ============================================ */
 
-/* ---------- Design Tokens ---------- */
 :root {
   --paper: #f5f4f0;
   --ink: #1a1c1a;
@@ -24,7 +20,7 @@
   --transition: 0.2s ease;
 }
 
-/* Dark theme via data attribute (JS toggle) */
+
 [data-theme="dark"] {
   --paper: #111310;
   --ink: #ededea;
@@ -42,7 +38,7 @@
   --nav-bg: rgba(17, 19, 16, 0.88);
 }
 
-/* Fallback for no-JS: use system preference */
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #111310;
@@ -62,7 +58,7 @@
   }
 }
 
-/* ---------- Reset & Base ---------- */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -97,14 +93,13 @@ a:focus-visible, button:focus-visible {
 
 img { display: block; max-width: 100%; }
 
-/* ---------- Utilities ---------- */
+
 .wrap {
   max-width: 920px;
   margin: 0 auto;
   padding: 0 28px;
 }
 
-/* Scroll-reveal base state */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -114,8 +109,6 @@ img { display: block; max-width: 100%; }
   opacity: 1;
   transform: translateY(0);
 }
-
-/* ---------- Top Nav ---------- */
 .topnav {
   position: sticky;
   top: 0;
@@ -177,7 +170,6 @@ img { display: block; max-width: 100%; }
   width: 100%;
 }
 
-/* Theme toggle */
 .theme-toggle {
   background: none;
   border: 1px solid var(--line);
@@ -209,7 +201,6 @@ img { display: block; max-width: 100%; }
   :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: block; }
 }
 
-/* Mobile menu button */
 .menu-btn {
   display: none;
   background: none;
@@ -220,7 +211,6 @@ img { display: block; max-width: 100%; }
 }
 .menu-btn svg { width: 24px; height: 24px; }
 
-/* ---------- Hero ---------- */
 .hero {
   padding: 72px 0 56px;
 }
@@ -271,7 +261,6 @@ img { display: block; max-width: 100%; }
   flex-wrap: wrap;
 }
 
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -310,7 +299,6 @@ img { display: block; max-width: 100%; }
   box-shadow: var(--shadow-sm);
 }
 
-/* Portrait */
 .portrait-frame {
   justify-self: center;
   width: 100%;
@@ -332,7 +320,6 @@ img { display: block; max-width: 100%; }
   object-fit: cover;
 }
 
-/* ---------- Section Shell ---------- */
 section {
   padding: 64px 0;
 }
@@ -364,7 +351,6 @@ section + section {
   margin-left: 16px;
 }
 
-/* ---------- About ---------- */
 .about p {
   max-width: 65ch;
   color: var(--ink-soft);
@@ -374,7 +360,6 @@ section + section {
 }
 .about p:last-child { margin-bottom: 0; }
 
-/* ---------- Experience Timeline ---------- */
 .timeline {
   position: relative;
   padding-left: 24px;
@@ -435,7 +420,6 @@ section + section {
   line-height: 1.65;
 }
 
-/* ---------- Skills ---------- */
 .skills-category {
   margin-bottom: 28px;
 }
@@ -472,7 +456,6 @@ section + section {
   box-shadow: var(--shadow-sm);
 }
 
-/* ---------- Education ---------- */
 .edu-list {
   display: flex;
   flex-direction: column;
@@ -512,7 +495,6 @@ section + section {
   padding-top: 2px;
 }
 
-/* ---------- Languages ---------- */
 .lang-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -544,7 +526,6 @@ section + section {
   margin-top: 6px;
 }
 
-/* ---------- Contact / Links ---------- */
 .contact-section {
   text-align: center;
 }
@@ -598,7 +579,6 @@ section + section {
   height: 100%;
 }
 
-/* ---------- Footer ---------- */
 footer {
   border-top: 1px solid var(--line);
   padding: 40px 0 48px;
@@ -637,9 +617,6 @@ footer .wrap {
   border-color: var(--accent);
 }
 
-/* ---------- Responsive ---------- */
-
-/* Tablet */
 @media (max-width: 900px) {
   .hero .wrap {
     grid-template-columns: 1fr;
@@ -664,7 +641,6 @@ footer .wrap {
   }
 }
 
-/* Mobile */
 @media (max-width: 640px) {
   html { font-size: 15.5px; }
 
@@ -672,7 +648,6 @@ footer .wrap {
 
   section { padding: 48px 0; }
 
-  /* Mobile nav */
   .menu-btn { display: block; }
   .nav-links {
     position: fixed;
@@ -694,18 +669,15 @@ footer .wrap {
     transform: translateX(0);
   }
 
-  /* Hero */
   .hero { padding: 48px 0 40px; }
   .hero h1 { font-size: 1.7rem; }
   .portrait-frame { max-width: 180px; }
   .eyebrow { font-size: 0.75rem; padding: 4px 12px; }
 
-  /* Experience */
   .timeline { padding-left: 20px; }
   .exp-item { padding-left: 20px; }
   .exp-item::before { left: -19px; width: 10px; height: 10px; top: 30px; }
 
-  /* Education */
   .edu-item {
     grid-template-columns: 1fr;
     gap: 4px;
@@ -714,32 +686,26 @@ footer .wrap {
     font-size: 0.82rem;
   }
 
-  /* Languages */
   .lang-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
-  /* Skills */
   .skill-pill { font-size: 0.82rem; padding: 7px 13px; }
 
-  /* Footer */
   footer .wrap {
     flex-direction: column;
     text-align: center;
   }
 
-  /* Section headings */
   .section-head h2 { font-size: 1.35rem; }
 }
 
-/* Very small */
 @media (max-width: 380px) {
   .cta-row { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
 }
 
-/* ---------- Reduced Motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
