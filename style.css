@@ -95,9 +95,9 @@ img { display: block; max-width: 100%; }
 
 
 .wrap {
-  max-width: 920px;
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 32px;
 }
 
 .reveal {
@@ -615,6 +615,14 @@ footer .wrap {
 .back-to-top:hover {
   color: var(--accent);
   border-color: var(--accent);
+}
+
+@media (min-width: 1440px) {
+  html { font-size: 18px; }
+  .wrap { max-width: 1320px; }
+  .hero { padding: 96px 0 72px; }
+  .portrait-frame { max-width: 320px; }
+  section { padding: 80px 0; }
 }
 
 @media (max-width: 900px) {
